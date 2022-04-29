@@ -6,5 +6,8 @@ app.get('/home', (request, response) => {
         code: 200
     }})
 });
+app.get('/list', (request, response) => {
+    response.send({data: [1,2,3,4,5]})
+});
 const PORT = process.env.PORT || 5001
 app.listen(PORT)
