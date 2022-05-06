@@ -21,5 +21,10 @@ authRountes(app)
 app.get('/list', (req, res) => res.send([1,2,3]))
 
 
-const PORT = process.env.PORT || 5001
-app.listen(PORT)
+// const PORT = process.env.PORT || 5001
+// app.listen(PORT)
+
+const server = app.listen(process.env.PORT || 5001, () => {
+    const port = server.address().port;
+    console.log(`Express is working on port ${port}`);
+  });
